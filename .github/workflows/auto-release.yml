@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: '版本号 (例如 v17.0.0)'
+        description: '版本号 (例如 v1.0.0)'
         required: true
         type: string
 
@@ -23,18 +23,19 @@ jobs:
       - name: Get commit messages since last tag
         id: commit_msgs
         run: |
-          # 获取上一个 tag
           LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           echo "LAST_TAG=${LAST_TAG}" >> $GITHUB_OUTPUT
           
-          # 获取提交信息
           if [ -z "$LAST_TAG" ]; then
             COMMITS=$(git log --pretty=format:"- %s (%h)" -n 50)
           else
             COMMITS=$(git log ${LAST_TAG}..HEAD --pretty=format:"- %s (%h)")
           fi
           
-          # 输出多行
+          if [ -z "$COMMITS" ]; then
+            COMMITS="- 无新提交"
+          fi
+          
           echo "MSG<<EOF" >> $GITHUB_OUTPUT
           echo "$COMMITS" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -42,7 +43,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v3
         with:
-          files: stats.lua
+          files: |
+            toggleHDR.lua
+            toggleHDR.conf
           tag_name: ${{ github.event.inputs.version }}
           name: ${{ github.event.inputs.version }}
           body: |
@@ -51,4 +54,4 @@ jobs:
             ### 更新内容
             ${{ steps.commit_msgs.outputs.MSG }}
 
-            **完整更新日志**：[${{ steps.commit_msgs.outputs.LAST_TAG }}...${{ github.event.inputs.version }}](${{ github.server_url }}/${{ github.repository }}/compare/${{ steps.commit_msgs.outputs.LAST_TAG }}...${{ github.event.inputs.version }})
+            ${{ steps.commit_msgs.outputs.LAST_TAG && format('**完整更新日志**：[{0}...{1}]({2}/{3}/compare/{0}...{1})', steps.commit_msgs.outputs.LAST_TAG, github.event.inputs.version, github.server_url, github.repository) || '' }}
