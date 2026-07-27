@@ -15,10 +15,10 @@
       <table>
         <tr><td><strong>QQ 群号</strong></td><td><code>1097053691</code></td></tr>
         <tr><td><strong>加入链接</strong></td><td><a href="https://qm.qq.com/q/KQZsl4wFmG">点击加入</a></td></tr>
-        <tr><td><strong>群成员</strong></td><td>800+ MPV </td></tr>
+        <tr><td><strong>群成员</strong></td><td>800+ MPV</td></tr>
         <tr><td><strong>群性质</strong></td><td>热心发电 · 免费交流</td></tr>
         <tr><td><strong>分享内容</strong></td><td>配置 / 脚本 / 着色器 / 懒人包</td></tr>
-        <tr><td><strong>适合人群</strong></td><td>新手入门·玩家折腾·开发交流</td></tr>
+        <tr><td><strong>适合人群</strong></td><td>新手入门 · 玩家折腾 · 开发交流</td></tr>
         <tr><td><strong>群目标</strong></td><td>互助 · 分享 · 共同折腾</td></tr>
         <tr><td><strong>进群暗号</strong></td><td>mpv 玩家</td></tr>
       </table>
@@ -49,116 +49,98 @@
 
 ---
 
-# 🎬 mpv 中文版统计脚本 (stats.lua) 汉化原创  
-
 <!-- 第一行：社交互动核心指标 -->
-[![GitHub stars](https://img.shields.io/github/stars/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/forks)
-[![GitHub watchers](https://img.shields.io/github/watchers/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/watchers)
-
-<!-- 第二行：项目数据徽章 -->
-[![GitHub Repo stars](https://img.shields.io/github/stars/yosh-wang/mpv-stats.lua-zh-chinese-translation-?style=flat-square)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yosh-wang/mpv-stats.lua-zh-chinese-translation-?style=flat-square)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/forks)
-[![GitHub issues](https://img.shields.io/github/issues/yosh-wang/mpv-stats.lua-zh-chinese-translation-?style=flat-square)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/issues)
-[![GitHub watchers](https://img.shields.io/github/watchers/yosh-wang/mpv-stats.lua-zh-chinese-translation-?style=flat-square)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/watchers)
-[![GitHub contributors](https://img.shields.io/github/contributors/yosh-wang/mpv-stats.lua-zh-chinese-translation-?style=flat-square)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/graphs/contributors)
-[![GitHub license](https://img.shields.io/github/license/yosh-wang/mpv-stats.lua-zh-chinese-translation-?style=flat-square)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/blob/main/LICENSE)
-
-<!-- 第三行：版本发布与下载统计 -->
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/releases/latest)
-[![GitHub tag](https://img.shields.io/github/v/tag/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/tags)
-[![GitHub release date](https://img.shields.io/github/release-date/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/releases)
-[![GitHub downloads (latest)](https://img.shields.io/github/downloads/yosh-wang/mpv-stats.lua-zh-chinese-translation-/latest/total?cacheSeconds=300)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/releases/latest)
-[![GitHub downloads](https://img.shields.io/github/downloads/yosh-wang/mpv-stats.lua-zh-chinese-translation-/total)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/releases)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/blob/main/LICENSE)
-
-<!-- 第四行：提交活动与贡献者 -->
-[![GitHub last commit](https://img.shields.io/github/last-commit/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/commits/main)
-[![GitHub commit activity (monthly)](https://img.shields.io/github/commit-activity/m/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/commits/main)
-[![GitHub commit activity (weekly)](https://img.shields.io/github/commit-activity/w/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/commits/main)
-[![GitHub commit activity (yearly)](https://img.shields.io/github/commit-activity/y/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/commits/main)
-[![GitHub contributors](https://img.shields.io/github/contributors/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/graphs/contributors)
-[![GitHub contributors (anon)](https://img.shields.io/github/contributors-anon/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-/graphs/contributors)
-
-<!-- 第五行：代码信息与技术栈 -->
-[![GitHub top language](https://img.shields.io/github/languages/top/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-)
-[![GitHub language count](https://img.shields.io/github/languages/count/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-)
-[![GitHub repo size](https://img.shields.io/github/repo-size/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-)
-[![GitHub code size](https://img.shields.io/github/languages/code-size/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-)
-[![GitHub file count](https://img.shields.io/github/directory-file-count/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-)
-[![Lines of Code](https://img.shields.io/tokei/lines/github/yosh-wang/mpv-stats.lua-zh-chinese-translation-)](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-)
-
-<!-- 第六行：自定义静态徽章 -->
-![Status](https://img.shields.io/badge/Status-Stable-brightgreen)
-![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)
-![MPV](https://img.shields.io/badge/MPV-Player-blue)
-![Language](https://img.shields.io/badge/Language-Lua-red)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
-![Translation](https://img.shields.io/badge/Translation-100%25-brightgreen)
-![Chinese](https://img.shields.io/badge/语言-中文-red)
-
----
-
-# mpv-hdr-auto-toggle
-
 [![GitHub stars](https://img.shields.io/github/stars/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/forks)
-[![GitHub issues](https://img.shields.io/github/issues/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/issues)
-[![GitHub license](https://img.shields.io/github/license/yosh-wang/mpv-hdr-auto-toggle)](LICENSE.md)
+[![GitHub watchers](https://img.shields.io/github/watchers/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/watchers)
+
+<!-- 第二行：项目数据徽章 -->
+[![GitHub Repo stars](https://img.shields.io/github/stars/yosh-wang/mpv-hdr-auto-toggle?style=flat-square)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/yosh-wang/mpv-hdr-auto-toggle?style=flat-square)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/forks)
+[![GitHub issues](https://img.shields.io/github/issues/yosh-wang/mpv-hdr-auto-toggle?style=flat-square)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/issues)
+[![GitHub watchers](https://img.shields.io/github/watchers/yosh-wang/mpv-hdr-auto-toggle?style=flat-square)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/watchers)
+[![GitHub contributors](https://img.shields.io/github/contributors/yosh-wang/mpv-hdr-auto-toggle?style=flat-square)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/graphs/contributors)
+[![GitHub license](https://img.shields.io/github/license/yosh-wang/mpv-hdr-auto-toggle?style=flat-square)](LICENSE.md)
+
+<!-- 第三行：版本发布与下载统计 -->
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/releases/latest)
+[![GitHub tag](https://img.shields.io/github/v/tag/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/tags)
+[![GitHub release date](https://img.shields.io/github/release-date/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/releases)
+[![GitHub downloads (latest)](https://img.shields.io/github/downloads/yosh-wang/mpv-hdr-auto-toggle/latest/total)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/releases/latest)
+[![GitHub downloads](https://img.shields.io/github/downloads/yosh-wang/mpv-hdr-auto-toggle/total)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/releases)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+
+<!-- 第四行：提交活动与贡献者 -->
 [![GitHub last commit](https://img.shields.io/github/last-commit/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/commits/main)
-[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
-[![Language](https://img.shields.io/badge/Language-Lua-blue)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
+[![GitHub commit activity (monthly)](https://img.shields.io/github/commit-activity/m/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/commits/main)
+[![GitHub commit activity (weekly)](https://img.shields.io/github/commit-activity/w/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/commits/main)
+[![GitHub commit activity (yearly)](https://img.shields.io/github/commit-activity/y/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/commits/main)
+[![GitHub contributors](https://img.shields.io/github/contributors/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/graphs/contributors)
+[![GitHub contributors (anon)](https://img.shields.io/github/contributors-anon/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle/graphs/contributors)
 
-> 🎯 Automatically toggle Windows HDR on/off based on video content for mpv player, using HDRTray.
+<!-- 第五行：代码信息与技术栈 -->
+[![GitHub top language](https://img.shields.io/github/languages/top/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
+[![GitHub language count](https://img.shields.io/github/languages/count/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
+[![GitHub repo size](https://img.shields.io/github/repo-size/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
+[![GitHub code size](https://img.shields.io/github/languages/code-size/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
+[![GitHub file count](https://img.shields.io/github/directory-file-count/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
+[![Lines of Code](https://img.shields.io/tokei/lines/github/yosh-wang/mpv-hdr-auto-toggle)](https://github.com/yosh-wang/mpv-hdr-auto-toggle)
 
----
-
-## ✨ Features
-
-| Feature | Description |
-|:--------|:------------|
-| 🎯 Auto Detection | Detects HDR (PQ/HLG) vs SDR video content automatically |
-| 🔄 Auto Toggle | Turns Windows HDR **ON** for HDR videos, **OFF** for SDR videos |
-| ⚡ Lightweight | Zero performance impact, runs only when needed |
-| 🔧 Configurable | Easy configuration via `script-opts/toggleHDR.conf` |
-| 🔄 State Restore | Restores original HDR state after playback ends |
-
----
-
-## 📋 Requirements
-
-- [mpv player](https://mpv.io/) (Windows)
-- [HDRTray](https://github.com/res2k/HDRTray) — provides `HDRCmd.exe`
+<!-- 第六行：自定义静态徽章 -->
+![Status](https://img.shields.io/badge/状态-稳定-brightgreen)
+![Maintained](https://img.shields.io/badge/维护中-是-brightgreen)
+![MPV](https://img.shields.io/badge/MPV-播放器-blue)
+![Language](https://img.shields.io/badge/语言-Lua-red)
+![Platform](https://img.shields.io/badge/平台-Windows-lightgrey)
 
 ---
 
-## 📥 Installation
+## ✨ 功能特性
 
-### 1️⃣ Install HDRTray
+| 功能 | 说明 |
+|:----|:----|
+| 🎯 自动检测 | 自动识别 HDR（PQ/HLG）与 SDR 视频内容 |
+| 🔄 自动切换 | HDR 视频自动开启 Windows HDR，SDR 视频自动关闭 |
+| ⚡ 轻量无感 | 零性能损耗，仅在需要时触发 |
+| 🔧 可配置 | 通过 `script-opts/toggleHDR.conf` 轻松配置 |
+| 🔄 状态恢复 | 播放结束后自动恢复原始 HDR 状态 |
 
-Download from [HDRTray/releases](https://github.com/res2k/HDRTray/releases) and place it somewhere (e.g., `D:\HDRTray\`).
+---
 
-Make sure `HDRCmd.exe` exists in the folder.
+## 📋 依赖要求
 
-### 2️⃣ Place the script
+- [mpv 播放器](https://mpv.io/)（Windows 版）
+- [HDRTray](https://github.com/res2k/HDRTray) — 提供 `HDRCmd.exe`
 
-Copy `toggleHDR.lua` to your mpv scripts directory:
+---
+
+## 📥 安装步骤
+
+### 1️⃣ 安装 HDRTray
+
+从 [HDRTray/releases](https://github.com/res2k/HDRTray/releases) 下载，解压到任意目录（例如 `D:\HDRTray\`）。
+
+确保目录中存在 `HDRCmd.exe` 文件。
+
+### 2️⃣ 放置脚本
+
+将 `toggleHDR.lua` 放入 mpv 的脚本目录：
 
 ```
-mpv_config/portable_config/scripts/toggleHDR.lua
+mpv配置目录/portable_config/scripts/toggleHDR.lua
 ```
 
-### 3️⃣ Place the config file
+### 3️⃣ 放置配置文件
 
-Copy `toggleHDR.conf` to your mpv script-opts directory:
+将 `toggleHDR.conf` 放入 mpv 的 script-opts 目录：
 
 ```
-mpv_config/portable_config/script-opts/toggleHDR.conf
+mpv配置目录/portable_config/script-opts/toggleHDR.conf
 ```
 
-### 4️⃣ Configure the script
+### 4️⃣ 配置脚本
 
-Edit `toggleHDR.conf` to set the correct path to `HDRCmd.exe`:
+编辑 `toggleHDR.conf`，设置 `HDRCmd.exe` 的实际路径：
 
 ```ini
 # 是否启用 HDR 自动切换功能
@@ -171,62 +153,62 @@ hdr_cmd_path=D:\HDRTray\HDRCmd.exe
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ 配置说明
 
-| Option | Description | Default |
-|:-------|:------------|:--------|
-| `enabled` | Enable/disable the script (`yes` / `no`) | `yes` |
-| `hdr_cmd_path` | Full path to `HDRCmd.exe` | `D:\HDRTray\HDRCmd.exe` |
+| 选项 | 说明 | 默认值 |
+|:----|:----|:----|
+| `enabled` | 是否启用脚本（`yes` / `no`） | `yes` |
+| `hdr_cmd_path` | `HDRCmd.exe` 的完整路径 | `D:\HDRTray\HDRCmd.exe` |
 
 ---
 
-## 🔧 How It Works
+## 🔧 工作原理
 
-1. **Detects HDR video** by checking:
+1. **检测 HDR 视频**：判断视频参数
    - `primaries == "bt.2020"`
-   - `gamma == "pq"` or `gamma == "hlg"`
+   - `gamma == "pq"` 或 `gamma == "hlg"`
 
-2. **Calls** `HDRCmd.exe on` or `HDRCmd.exe off` to toggle Windows HDR mode
+2. **执行切换**：调用 `HDRCmd.exe on` 或 `HDRCmd.exe off`
 
-3. **Restores** the original HDR state when:
-   - Playback ends (end-file)
-   - mpv shuts down (shutdown)
-
----
-
-## 🐛 Troubleshooting
-
-| Issue | Solution |
-|:------|:---------|
-| Script not working | Check `enabled=yes` in `toggleHDR.conf` |
-| HDRCmd.exe not found | Verify the path in config file is correct |
-| Permission denied | Run mpv as administrator (HDR toggle may require admin) |
-| Check logs | Look for `toggleHDR:` messages in mpv console/log |
+3. **状态恢复**：在以下时机恢复原始 HDR 状态
+   - 播放结束（end-file）
+   - mpv 关闭（shutdown）
 
 ---
 
-## 📁 File Structure
+## 🐛 故障排除
+
+| 问题 | 解决方法 |
+|:----|:----|
+| 脚本无反应 | 检查 `toggleHDR.conf` 中 `enabled=yes` |
+| 找不到 HDRCmd.exe | 确认配置文件中的路径是否正确 |
+| 权限不足 | 以管理员身份运行 mpv（HDR 切换可能需要管理员权限） |
+| 查看日志 | 在 mpv 控制台/日志中搜索 `toggleHDR:` 消息 |
+
+---
+
+## 📁 文件结构
 
 ```
 mpv-hdr-auto-toggle/
-├── toggleHDR.lua          # Main script
-├── toggleHDR.conf         # Configuration file
-├── README.md              # This file
-└── LICENSE.md             # MIT License
+├── toggleHDR.lua          # 主脚本
+├── toggleHDR.conf         # 配置文件
+├── README.md              # 本文件
+└── LICENSE.md             # MIT 许可证
 ```
 
 ---
 
-## 📜 License
+## 📜 许可证
 
-This project is released under the [MIT License](LICENSE.md).
+本项目基于 [MIT License](LICENSE.md) 开源。
 
 ---
 
-## 🙏 Credits
+## 🙏 致谢
 
-- [mpv player](https://mpv.io/) — The best video player
-- [HDRTray](https://github.com/res2k/HDRTray) — Windows HDR control tool
+- [mpv 播放器](https://mpv.io/) — 强大而优雅的媒体播放器
+- [HDRTray](https://github.com/res2k/HDRTray) — Windows HDR 控制工具
 
 ---
 
@@ -235,5 +217,5 @@ This project is released under the [MIT License](LICENSE.md).
 </p>
 
 <p align="center">
-  <sub>⭐ If this project helps you, please give it a Star!</sub>
+  <sub>⭐ 如果这个项目对您有帮助，请给一个 Star 支持一下！</sub>
 </p>
