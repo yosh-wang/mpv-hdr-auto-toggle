@@ -19,7 +19,7 @@
         <tr><td><strong>群性质</strong></td><td>热心发电 · 免费交流</td></tr>
         <tr><td><strong>分享内容</strong></td><td>配置 / 脚本 / 着色器 / 懒人包</td></tr>
         <tr><td><strong>适合人群</strong></td><td>新手入门 · 玩家折腾 · 开发交流</td></tr>
-        <tr><td><strong>群目标</strong></td><td>互助 · 分享 · 共同折腾</td></tr>
+        <tr><td><strong>群目标</strong></td><td>互助·分享·共同折腾</td></tr>
         <tr><td><strong>进群暗号</strong></td><td>mpv 玩家</td></tr>
       </table>
     </td>
