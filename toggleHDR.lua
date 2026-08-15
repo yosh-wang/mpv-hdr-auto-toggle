@@ -103,28 +103,23 @@ mp.observe_property("video-params", "native", function(_, params)
         return
     end
 
-    local is_hdr_video = params.primaries == "bt.2020" and (params.gamma == "pq" or params.gamma == "hlg")
-    local current_hdr_state = hdr_status()
+    local is_hdr = params.primaries == "bt.2020" and (params.gamma == "pq" or params.gamma == "hlg")
+    local current_hdr = hdr_status()
 
-    if initial_hdr_state then
-        if is_hdr_video then
-            return
-        else
-            if current_hdr_state then
-                mp.msg.info("toggleHDR: SDR video on HDR display, turning HDR off")
-                hdr_set(false)
-                hdr_was_toggled = true
-            end
-        end
-    else
-        if is_hdr_video then
-            if not current_hdr_state then
-                mp.msg.info("toggleHDR: HDR video on SDR display, turning HDR on")
-                hdr_set(true)
-                hdr_was_toggled = true
-            end
-        else
-            return
-        end
+    -- 四种切换逻辑：比较 视频类型 和 显示器当前状态
+    if is_hdr == current_hdr then
+        -- #1: HDR+HDR / #4: SDR+SDR → 匹配，不动
+        return
     end
+
+    if is_hdr then
+        -- #3: 显示器 SDR + 视频 HDR → 开 HDR
+        mp.msg.info("toggleHDR: HDR video on SDR display, turning HDR on")
+        hdr_set(true)
+    else
+        -- #2: 显示器 HDR + 视频 SDR → 关 HDR
+        mp.msg.info("toggleHDR: SDR video on HDR display, turning HDR off")
+        hdr_set(false)
+    end
+    hdr_was_toggled = true
 end)
