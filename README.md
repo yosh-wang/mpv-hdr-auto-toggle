@@ -171,22 +171,51 @@ hdr_cmd_path=D:\HDRTray\HDRCmd.exe
 | 选项 | 说明 | 默认值 |
 |:----|:----|:----|
 | `enabled` | 是否启用脚本（`yes` / `no`） | `yes` |
+| `hdr_hdr` | 显示器 HDR + 视频 HDR 时是否保持不动 | `yes` |
+| `hdr_off_open` | 显示器 HDR + 视频 SDR 时是否关闭 HDR（播放结束后恢复） | `yes` |
+| `hdr_open_off` | 显示器 SDR + 视频 HDR 时是否开启 HDR（播放结束后关闭） | `yes` |
+| `sdr_sdr` | 显示器 SDR + 视频 SDR 时是否保持不动 | `yes` |
 | `hdr_cmd_path` | `HDRCmd.exe` 的完整路径 | `D:\HDRTray\HDRCmd.exe` |
+
+### 💡 配置场景示例
+
+**场景一：默认行为（推荐）**
+
+所有开关保持 `yes`，视频类型自动匹配显示器 HDR 状态。
+
+**场景二：SDR 视频映射 HDR 播放**
+
+如果你希望 SDR 视频也在 HDR 模式下播放（通过 mpv 的 `target-colorspace-hint` 或着色器映射），将 `hdr_off_open` 设为 `no`：
+
+```ini
+hdr_off_open=no   # 显示器 HDR 时播放 SDR 视频不关闭 HDR
+hdr_open_off=yes  # 显示器 SDR 时播放 HDR 视频仍开启 HDR
+```
+
+这样 SDR 视频会保持在 HDR 显示器输出，由 mpv 负责 SDR→HDR 映射。
+
+**场景三：完全禁用所有自动切换**
+
+```ini
+enabled=no
+```
 
 ---
 
 ## 🔧 工作原理
 
-### 切换逻辑
+### 切换逻辑（四条规则）
 
-| 显示器 HDR | 视频类型 | 状态匹配 | 脚本动作 |
-|:---:|:---:|:---:|:---|
-| 开启 | HDR | ✅ | 不动 |
-| 开启 | SDR | ❌ | 关 HDR → 播放结束后开 HDR |
-| 关闭 | HDR | ❌ | 开 HDR → 播放结束后关 HDR |
-| 关闭 | SDR | ✅ | 不动 |
+| 规则 | 显示器 HDR | 视频类型 | 脚本动作 | 配置开关 |
+|:---:|:---:|:---:|:---|:---:|
+| #1 | 开启 | HDR | ✅ 保持不动 | `hdr_hdr` |
+| #2 | 开启 | SDR | 🔄 关闭 HDR → 播放结束后恢复 | `hdr_off_open` |
+| #3 | 关闭 | HDR | 🔄 开启 HDR → 播放结束后恢复 | `hdr_open_off` |
+| #4 | 关闭 | SDR | ✅ 保持不动 | `sdr_sdr` |
 
-**核心原则：显示器 HDR 状态必须与视频 HDR 类型匹配。匹配则不动，不匹配则切换，播放结束后恢复原状态。**
+**核心原则：** 显示器 HDR 状态必须与视频 HDR 类型匹配。匹配则不动，不匹配则切换，播放结束后恢复原状态。
+
+每条规则都配有独立开关，你可以根据需求自由组合启用/禁用。
 
 ### 技术实现
 
@@ -199,6 +228,7 @@ hdr_cmd_path=D:\HDRTray\HDRCmd.exe
 3. **状态恢复**：在播放结束或 mpv 关闭时恢复原始 HDR 状态
 
 ---
+
 
 ## 🐛 故障排除
 
