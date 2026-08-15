@@ -101,6 +101,7 @@
 |:----|:----|
 | 🎯 自动检测 | 自动识别 HDR（PQ/HLG）与 SDR 视频内容 |
 | 🔄 自动切换 | HDR 视频自动开启 Windows HDR，SDR 视频自动关闭 |
+| 🎛️ 独立开关 | 四种场景可单独启用/禁用，灵活适配不同需求 |
 | ⚡ 轻量无感 | 零性能损耗，仅在需要时触发 |
 | 🔧 可配置 | 通过 `script-opts/toggleHDR.conf` 轻松配置 |
 | 🔄 状态恢复 | 播放结束后自动恢复原始 HDR 状态 |
@@ -147,20 +148,20 @@ mpv配置目录/portable_config/script-opts/toggleHDR.conf
 enabled=yes
 
 # 四条切换逻辑的独立开关（yes=执行，no=不动）
-
-# 1.显示器状态是HDR - 播放视频HDR视频时 -  脚本动作：默认不动 不操作 【默认yes】
+#
+# 1. 显示器 HDR + 视频 HDR → 不动（保持 HDR 开启）
 hdr_hdr=yes
-
-# 2.显示器状态是HDR - 播放视频SDR视频时 -  脚本动作：关闭显示器HDR-播放结束后打开HDR 【默认yes】【需要SDR视频映射HDR播放 此处需要设置no】
+#
+# 2. 显示器 HDR + 视频 SDR → 关闭 HDR，播放结束后恢复
 hdr_off_open=yes
-
-# 3.显示器状态是SDR - 播放视频 HDR视频时 - 脚本动作：打开显示器HDR -播放结束关闭HDR 【默认yes】
+#
+# 3. 显示器 SDR + 视频 HDR → 开启 HDR，播放结束后关闭
 hdr_open_off=yes
-
-# 4.显示器状态是SDR - 播放视频SDR视频时 -   脚本动作：默认不动 【默认yes】
+#
+# 4. 显示器 SDR + 视频 SDR → 不动（保持 SDR）
 sdr_sdr=yes
 
-# HDRCmd.exe 的路径
+# HDRCmd.exe 的路径（请修改为你的实际路径）
 hdr_cmd_path=D:\HDRTray\HDRCmd.exe
 ```
 
@@ -229,14 +230,14 @@ enabled=no
 
 ---
 
-
 ## 🐛 故障排除
 
 | 问题 | 解决方法 |
 |:----|:----|
 | 脚本无反应 | 检查 `toggleHDR.conf` 中 `enabled=yes` |
-| 找不到 HDRCmd.exe | 确认配置文件中的路径是否正确 |
+| 找不到 HDRCmd.exe | 确认 `hdr_cmd_path` 路径是否正确 |
 | 权限不足 | 以管理员身份运行 mpv（HDR 切换可能需要管理员权限） |
+| 某个场景不触发 | 检查对应的独立开关是否设为 `yes` |
 | 查看日志 | 在 mpv 控制台/日志中搜索 `toggleHDR:` 消息 |
 
 ---
