@@ -148,16 +148,16 @@ mpv配置目录/portable_config/script-opts/toggleHDR.conf
 enabled=yes
 
 # 四条切换逻辑的独立开关（yes=执行，no=不动）
-#
+
 # 1. 显示器 HDR + 视频 HDR → 不动（保持 HDR 开启）
 hdr_hdr=yes
-#
+
 # 2. 显示器 HDR + 视频 SDR → 关闭 HDR，播放结束后恢复
 hdr_off_open=yes
-#
+
 # 3. 显示器 SDR + 视频 HDR → 开启 HDR，播放结束后关闭
 hdr_open_off=yes
-#
+
 # 4. 显示器 SDR + 视频 SDR → 不动（保持 SDR）
 sdr_sdr=yes
 
