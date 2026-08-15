@@ -8,7 +8,11 @@ require "mp.msg"
 
 local config = {
     hdr_cmd_path = "D:\\HDRTray\\HDRCmd.exe",
-    enabled = true
+    enabled = true,
+    hdr_hdr = true,
+    hdr_off_open = true,
+    hdr_open_off = true,
+    sdr_sdr = true,
 }
 
 local config_file = mp.find_config_file("script-opts/toggleHDR.conf")
@@ -24,6 +28,14 @@ if config_file then
                     value = value:gsub("^%s+", ""):gsub("%s+$", "")
                     if key == "enabled" then
                         config.enabled = value ~= "no" and value ~= "false"
+                    elseif key == "hdr_hdr" then
+                        config.hdr_hdr = value ~= "no" and value ~= "false"
+                    elseif key == "hdr_off_open" then
+                        config.hdr_off_open = value ~= "no" and value ~= "false"
+                    elseif key == "hdr_open_off" then
+                        config.hdr_open_off = value ~= "no" and value ~= "false"
+                    elseif key == "sdr_sdr" then
+                        config.sdr_sdr = value ~= "no" and value ~= "false"
                     elseif key == "hdr_cmd_path" then
                         config.hdr_cmd_path = value
                     end
@@ -35,7 +47,7 @@ if config_file then
 end
 
 if not config.enabled then
-    mp.msg.info("toggleHDR: disabled in config")
+    mp.msg.info("toggleHDR: disabled, script will not manage HDR switching")
     return
 end
 
@@ -106,20 +118,42 @@ mp.observe_property("video-params", "native", function(_, params)
     local is_hdr = params.primaries == "bt.2020" and (params.gamma == "pq" or params.gamma == "hlg")
     local current_hdr = hdr_status()
 
-    -- 四种切换逻辑：比较 视频类型 和 显示器当前状态
-    if is_hdr == current_hdr then
-        -- #1: HDR+HDR / #4: SDR+SDR → 匹配，不动
+    if is_hdr and current_hdr then
+        -- #1: 显示 HDR + 视频 HDR
+        if config.hdr_hdr then
+            mp.msg.info("toggleHDR: #1 HDR+HDR → enabled")
+        end
         return
     end
 
-    if is_hdr then
-        -- #3: 显示器 SDR + 视频 HDR → 开 HDR
-        mp.msg.info("toggleHDR: HDR video on SDR display, turning HDR on")
-        hdr_set(true)
-    else
-        -- #2: 显示器 HDR + 视频 SDR → 关 HDR
-        mp.msg.info("toggleHDR: SDR video on HDR display, turning HDR off")
-        hdr_set(false)
+    if not is_hdr and not current_hdr then
+        -- #4: 显示 SDR + 视频 SDR
+        if config.sdr_sdr then
+            mp.msg.info("toggleHDR: #4 SDR+SDR → enabled")
+        end
+        return
     end
-    hdr_was_toggled = true
+
+    if is_hdr and not current_hdr then
+        -- #3: 显示 SDR + 视频 HDR → 开 HDR
+        if not config.hdr_open_off then
+            mp.msg.info("toggleHDR: #3 SDR+HDR → disabled, skipping")
+            return
+        end
+        mp.msg.info("toggleHDR: #3 SDR+HDR → turning HDR on")
+        hdr_set(true)
+        hdr_was_toggled = true
+        return
+    end
+
+    if not is_hdr and current_hdr then
+        -- #2: 显示 HDR + 视频 SDR → 关 HDR
+        if not config.hdr_off_open then
+            mp.msg.info("toggleHDR: #2 HDR+SDR → disabled, skipping")
+            return
+        end
+        mp.msg.info("toggleHDR: #2 HDR+SDR → turning HDR off")
+        hdr_set(false)
+        hdr_was_toggled = true
+    end
 end)
