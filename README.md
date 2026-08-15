@@ -247,8 +247,7 @@ enabled=no
 mpv-hdr-auto-toggle/
 ├── toggleHDR.lua          # 主脚本
 ├── toggleHDR.conf         # 配置文件
-├── README.md              # 本文件
-└── LICENSE.md             # MIT 许可证
+
 ```
 
 ---
