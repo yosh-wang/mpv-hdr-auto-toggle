@@ -172,10 +172,10 @@ hdr_cmd_path=D:\HDRTray\HDRCmd.exe
 | 选项 | 说明 | 默认值 | SDR映射HDR播放 |
 |:----|:----|:----|:----|
 | `enabled` | 是否启用脚本（`yes` / `no`） | `yes` |   |
-| `hdr_hdr` | 显示器 HDR + 视频 HDR 时是否保持不动 | `yes` |   |
-| `hdr_off_open` | 显示器 HDR + 视频 SDR 时是否关闭 HDR（播放结束后恢复） | `yes` | `no` |
-| `hdr_open_off` | 显示器 SDR + 视频 HDR 时是否开启 HDR（播放结束后关闭） | `yes` |  |
-| `sdr_sdr` | 显示器 SDR + 视频 SDR 时是否保持不动 | `yes` | |
+| `hdr_hdr` | 显示器 HDR + HDR视频时，是否保持不动 | `yes` |   |
+| `hdr_off_open` | 显示器 HDR + SDR视频时，是否关闭 HDR（播放结束后恢复） | `yes` | `no` |
+| `hdr_open_off` | 显示器 SDR + HDR视频时，是否开启 HDR（播放结束后关闭） | `yes` |  |
+| `sdr_sdr` | 显示器 SDR + SDR视频时，是否保持不动 | `yes` | |
 | `hdr_cmd_path` | `HDRCmd.exe` 的完整路径 | `D:\HDRTray\HDRCmd.exe` | `D:\HDRTray\HDRCmd.exe` |
 
 ### 💡 配置场景示例
