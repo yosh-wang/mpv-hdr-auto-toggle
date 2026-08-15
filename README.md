@@ -190,7 +190,6 @@ hdr_cmd_path=D:\HDRTray\HDRCmd.exe
 
 ```ini
 hdr_off_open=no   # 显示器 HDR 时播放 SDR 视频不关闭 HDR
-hdr_open_off=yes  # 显示器 SDR 时播放 HDR 视频仍开启 HDR
 ```
 
 这样 SDR 视频会保持在 HDR 显示器输出，由 mpv 负责 SDR→HDR 映射。
